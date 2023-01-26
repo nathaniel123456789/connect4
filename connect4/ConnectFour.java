@@ -10,7 +10,6 @@ public class ConnectFour {
     private boolean forLoop;
     private int LOWER_BOUND = 1;
     private int UPPER_BOUND = 7;
-
     public static void main(String[] args) {
         System.out.println("-- X represents player 1's tiles -- O represents player 2's tiles--");
         System.out.println("--First, type the column that player 1 wishes to place their tile, next player 2 type the column they wish to place a tile--");
@@ -18,7 +17,6 @@ public class ConnectFour {
         ConnectFour play = new ConnectFour();
         play.playConnectFour();
     }
-
     public void playConnectFour() {
         for (int i = 0; i < 7; i++) {
             gameboard[0][i] = " ";
@@ -28,15 +26,12 @@ public class ConnectFour {
             gameboard[4][i] = " ";
             gameboard[5][i] = " ";
         }
-
         this.gameIsRunning = true;
-
         for (int i = 5; i >= 0; i--) {
             System.out.println("| "+gameboard[i][0]+" | "+gameboard[i][1]+" | "+gameboard[i][2]+" | "+gameboard[i][3]+" | "+gameboard[i][4]+" | "+gameboard[i][5]+" | "+gameboard[i][6]+" |");
         }
         System.out.println("");
         System.out.println("- "+"1"+" - "+"2"+" - "+"3"+" - "+"4"+" - "+"5"+" - "+"6"+" - "+"7"+" -");
-
         while (gameIsRunning == true) {
             try {
                 scannerInput = scanner.nextInt();
@@ -63,13 +58,11 @@ public class ConnectFour {
                                 }
                             }
                         }
-
                         for (int i = 5; i >= 0; i--) {
                             System.out.println("| "+gameboard[i][0]+" | "+gameboard[i][1]+" | "+gameboard[i][2]+" | "+gameboard[i][3]+" | "+gameboard[i][4]+" | "+gameboard[i][5]+" | "+gameboard[i][6]+" |");
                         }
                         System.out.println("");
                         System.out.println("- "+"1"+" - "+"2"+" - "+"3"+" - "+"4"+" - "+"5"+" - "+"6"+" - "+"7"+" -");
-
                         for (int i = 0; i < 3; i++) {
                             if (gameboard[i][scannerVariable] == "X" && gameboard[i+1][scannerVariable] == "X" && gameboard[i+2][scannerVariable] == "X" && gameboard[i+3][scannerVariable] == "X") {
                                 System.out.println("--Player 1 has won!--");
@@ -99,18 +92,14 @@ public class ConnectFour {
                                     gameIsRunning = false;
                                 }
                             }
-                        }
-                        
-                        
+                        }  
                     }
                 }
             } catch (InputMismatchException error) {
                 System.out.println("-- Please type the column you wish to play, a number from 1-7, player 2's turn has been skipped --");
                 scanner.next();
             }
-
             //player2
-
             try {
                 scannerInput = scanner.nextInt();
                 scannerVariable = scannerInput - 1;
@@ -136,13 +125,11 @@ public class ConnectFour {
                                 }
                             }
                         }
-
                         for (int i = 5; i >= 0; i--) {
                             System.out.println("| "+gameboard[i][0]+" | "+gameboard[i][1]+" | "+gameboard[i][2]+" | "+gameboard[i][3]+" | "+gameboard[i][4]+" | "+gameboard[i][5]+" | "+gameboard[i][6]+" |");
                         }
                         System.out.println("");
                         System.out.println("- "+"1"+" - "+"2"+" - "+"3"+" - "+"4"+" - "+"5"+" - "+"6"+" - "+"7"+" -");
-
                         for (int i = 0; i < 3; i++) {
                             if (gameboard[i][scannerVariable] == "O" && gameboard[i+1][scannerVariable] == "O" && gameboard[i+2][scannerVariable] == "O" && gameboard[i+3][scannerVariable] == "O") {
                                 System.out.println("--Player 2 has won!--");
@@ -173,7 +160,6 @@ public class ConnectFour {
                                 }
                             }
                         }
-                        
                     }
                 }
             } catch (InputMismatchException error) {
