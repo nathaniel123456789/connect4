@@ -1,7 +1,7 @@
 #BlueJ class context
-comment0.target=ConnectSix
+comment0.target=Connectfour
 comment1.params=args
 comment1.target=void\ main(java.lang.String[])
 comment2.params=
-comment2.target=void\ playConnectSix()
+comment2.target=void\ playConnectfour()
 numComments=3

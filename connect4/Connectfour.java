@@ -1,6 +1,6 @@
 import java.util.Scanner;
 import java.util.InputMismatchException;
-public class ConnectSix {
+public class Connectfour {
     private String[][] gameboard = new String[6][7];
     private Scanner scanner = new Scanner(System.in);
     private int scannerInput;
@@ -14,10 +14,10 @@ public class ConnectSix {
         System.out.println("-- X represents player 1's tiles -- O represents player 2's tiles--");
         System.out.println("--First, type the column that player 1 wishes to place their tile, next player 2 type the column they wish to place a tile--");
         System.out.println("-- Only type in the numbers/columns 1-7 --");
-        ConnectSix play = new ConnectSix();
-        play.playConnectSix();
+        Connectfour play = new Connectfour();
+        play.playConnectfour();
     }
-    public void playConnectSix() {
+    public void playConnectfour() {
         for (int i = 0; i < 7; i++) {
             gameboard[0][i] = " ";
             gameboard[1][i] = " ";
