@@ -13,18 +13,15 @@ public class Connectfour {
     public static void main(String[] args) {
         System.out.println("-- X represents player 1's tiles -- O represents player 2's tiles--");
         System.out.println("--First, type the column that player 1 wishes to place their tile, next player 2 type the column they wish to place a tile--");
-        System.out.println("-- Only type in the numbers/columns 1-7 --");
+        System.out.println("-- Only type in numbers 1-7 --");
         Connectfour play = new Connectfour();
         play.playConnectfour();
     }
     public void playConnectfour() {
-        for (int i = 0; i < 7; i++) {
-            gameboard[0][i] = " ";
-            gameboard[1][i] = " ";
-            gameboard[2][i] = " ";
-            gameboard[3][i] = " ";
-            gameboard[4][i] = " ";
-            gameboard[5][i] = " ";
+        for (int n = 0; n < 6; n++) {
+            for (int i = 0; i < 7; i++) {
+                gameboard[n][i] = " ";
+            }
         }
         this.gameIsRunning = true;
         for (int i = 5; i >= 0; i--) {
@@ -37,9 +34,9 @@ public class Connectfour {
                 scannerInput = scanner.nextInt();
                 scannerVariable = scannerInput - 1;
                 if (scannerInput < LOWER_BOUND) {
-                    System.out.println("-- There is no column under the number 1, please put a column from 1-7, player 1's turn has been skipped --");
+                    System.out.println("-- There is no column under the number 1, input a number between 1-7, player 1's turn has been skipped --");
                 } else if (scannerInput > UPPER_BOUND) {
-                    System.out.println("-- There is no column above the number 7, please put a column from 1-7, player 1's turn has been skipped --");
+                    System.out.println("-- There is no column above the number 7, input a number between 1-7, player 1's turn has been skipped --");
                 } else {
                     this.placeTile = true;
                     this.forLoop = true;
@@ -99,14 +96,14 @@ public class Connectfour {
                 System.out.println("-- Please type the column you wish to play, a number from 1-7, player 2's turn has been skipped --");
                 scanner.next();
             }
-            // this is player 2
+            //player 2
             try {
                 scannerInput = scanner.nextInt();
                 scannerVariable = scannerInput - 1;
                 if (scannerInput < LOWER_BOUND) {
-                    System.out.println("-- There is no column under the number 1, please put a column from 1-7, player 2's turn has been skipped --");
+                    System.out.println("-- There is no column under the number 1, input a number between 1-7, player 2's turn has been skipped --");
                 } else if (scannerInput > UPPER_BOUND) {
-                    System.out.println("-- There is no column above the number 7, please put a column from 1-7, player 2's turn has been skipped --");
+                    System.out.println("-- There is no column above the number 7, input a number between 1-7, player 2's turn has been skipped --");
                 } else {
                     this.placeTile = true;
                     this.forLoop = true;
